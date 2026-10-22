@@ -26,6 +26,7 @@ setup(
                 'test2 = dsr_example.simple.test2:main',
                 'test_action_movej_h2r = dsr_example.simple.test_action_movej_h2r:main',
                 'test_action_movel_h2r = dsr_example.simple.test_action_movel_h2r:main',
+            'pose_to_moveit_bridge = dsr_example.simple.pose_to_moveit_bridge:main',
         ],
     },
 )
