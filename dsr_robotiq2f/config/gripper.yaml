@@ -1,0 +1,20 @@
+gripper:
+  ros__parameters:
+    # Use the by-id path: ttyACMx numbers can change between boots.
+    port: /dev/serial/by-id/usb-1a86_USB_Single_Serial_5C90002140-if00
+    slave_id: 9
+    baudrate: 115200
+    poll_rate_hz: 50.0          # must stay >= ~5 Hz or the gripper raises fault 9
+    joint_name: robotiq_85_left_knuckle_joint
+    # Opening width mapping (metres). Raw 3 ~ fully open, 228 ~ fully closed with no object
+    # (measured with the bare gripper). Linear, uncalibrated: refine with a caliper.
+    max_opening: 0.085
+    raw_open: 3
+    raw_closed: 228
+    # Command limits (raw 0-255). Defaults are deliberately gentle.
+    default_speed: 100
+    default_force: 60
+    max_speed: 255
+    max_force: 150
+    max_effort_n: 235.0         # GripperCommand.max_effort (N) that maps to force 255
+    auto_activate: false        # activation moves the fingers through full range once
